@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>인라인 이벤트  모델 1</title>
     <script>
+        
         function greet() {
             alert('안녕하세요~ 온라인 이벤트 모델 2');
         }
@@ -38,15 +39,27 @@
                     count = 1;
                 }
                 img.src = "imgs/im " + count + ".jpg";
-            }, 2000);
+            }, 2000); 
+            
+            let a1 = document.getElementById("a1");
+            a1.onclick = function(event){
+              return false; // a 탸그의 디폴트 이벤트 제거
+            };
         }
+
+        
+        
         
     </script>
 </head>
-<body>
-    <button onclick="alert('온라인 이벤트 모델')">온라인 이벤트 모델</button><br><br>
+<body onload="showImageSlide()">
+    <button onclick="alert('온라인 이벤트 모델 1')">온라인 이벤트 모델</button><br><br>
     <button onclick="greet()">인사하기</button><br><br>
     <button onclick="addstar(this)">별 추가</button><br><br>
     <button onmouseover="overChange(this)" onmouseout="outChange(this)">배경 및 글자색 변경</button><br><br>
     <img src="imgs/im 1.jpg"width="400" height="300" onclick="changeImg(this)" style="cursor: pointer;"><br><br>
     <img src="imgs/im 1.jpg"width="400" height="300" id="img2">
+    <a href="https://www.naver.com/" id="a1">디폴트 이벤트 제거</a>
+
+    </body>
+    </html>
